@@ -1,0 +1,43 @@
+Pollutant,Year,TotalEmission,Index_2018_100,TotalEmission_tonnes
+Ammonia (NH3),2018,1925900.0,100.0,1925.9
+Ammonia (NH3),2019,2051100.0,106.5,2051.1
+Ammonia (NH3),2020,2154900.0,111.9,2154.9
+Ammonia (NH3),2021,1968700.0,102.2,1968.7
+Ammonia (NH3),2022,2193300.0,113.9,2193.3
+Ammonia (NH3),2023,1991519.54,103.4,1991.51954
+Ammonia (NH3),2024,1983691.9,103.0,1983.6918999999998
+Carbon dioxide (CO2) excluding biomass,2018,15333690000.0,100.0,15333690.0
+Carbon dioxide (CO2) excluding biomass,2019,14813106000.0,96.6,14813106.0
+Carbon dioxide (CO2) excluding biomass,2020,13284290000.0,86.6,13284290.0
+Carbon dioxide (CO2) excluding biomass,2021,14757037000.0,96.2,14757037.0
+Carbon dioxide (CO2) excluding biomass,2022,14339055000.0,93.5,14339055.0
+Carbon dioxide (CO2) excluding biomass,2023,14118949361.66,92.1,14118949.36166
+Carbon dioxide (CO2) excluding biomass,2024,13689774023.22,89.3,13689774.023219999
+Nitrogen oxides (NOX),2018,24583000.0,100.0,24583.0
+Nitrogen oxides (NOX),2019,23967000.0,97.5,23967.0
+Nitrogen oxides (NOX),2020,23687000.0,96.4,23687.0
+Nitrogen oxides (NOX),2021,24783000.0,100.8,24783.0
+Nitrogen oxides (NOX),2022,23804000.0,96.8,23804.0
+Nitrogen oxides (NOX),2023,22973720.7,93.5,22973.720699999998
+Nitrogen oxides (NOX),2024,22550309.547,91.7,22550.309546999997
+Nitrous oxide (N2O),2018,600700.0,100.0,600.7
+Nitrous oxide (N2O),2019,576200.0,95.9,576.2
+Nitrous oxide (N2O),2020,482600.0,80.3,482.6
+Nitrous oxide (N2O),2021,511400.0,85.1,511.4
+Nitrous oxide (N2O),2022,486200.0,80.9,486.2
+Nitrous oxide (N2O),2023,481671.8,80.2,481.67179999999996
+Nitrous oxide (N2O),2024,481081.1,80.1,481.0811
+Non-methane volatile organic compounds (NMVOC),2018,19404000.0,100.0,19404.0
+Non-methane volatile organic compounds (NMVOC),2019,19213000.0,99.0,19213.0
+Non-methane volatile organic compounds (NMVOC),2020,19094000.0,98.4,19094.0
+Non-methane volatile organic compounds (NMVOC),2021,19971000.0,102.9,19971.0
+Non-methane volatile organic compounds (NMVOC),2022,20454000.0,105.4,20454.0
+Non-methane volatile organic compounds (NMVOC),2023,19668380.66,101.4,19668.38066
+Non-methane volatile organic compounds (NMVOC),2024,21259659.2,109.6,21259.6592
+Particulate matter (PM10),2018,2967100.0,100.0,2967.1
+Particulate matter (PM10),2019,2191400.0,73.9,2191.4
+Particulate matter (PM10),2020,2334400.0,78.7,2334.4
+Particulate matter (PM10),2021,1631100.0,55.0,1631.1
+Particulate matter (PM10),2022,1643300.0,55.4,1643.3
+Particulate matter (PM10),2023,2206619.0,74.4,2206.619
+Particulate matter (PM10),2024,1996792.435,67.3,1996.792435
