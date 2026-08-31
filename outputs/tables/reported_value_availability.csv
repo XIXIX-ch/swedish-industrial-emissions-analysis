@@ -1,4 +1,4 @@
-Pollutant,Year,total_rows,reported_values,value_availability_pct
+Pollutant,Year,total_records,reported_values,value_availability_pct
 Ammonia (NH3),2018,223,89,39.9
 Ammonia (NH3),2019,223,76,34.1
 Ammonia (NH3),2020,223,76,34.1

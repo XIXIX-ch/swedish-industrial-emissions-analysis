@@ -1,133 +1,137 @@
 # Swedish Industrial Air Emissions Analysis
 
-A Python-based analysis of reported industrial air releases in Sweden
-using the European Environment Agency (EEA) Industrial Emissions
-Dataset.
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Data](https://img.shields.io/badge/Data-EEA%20E--PRTR-00594C)](https://www.eea.europa.eu/en/datahub/datahubitem-view/9405f714-8015-4b5b-a63c-280b82861b3d)
 
-The project examines reported releases from 2018 to 2024, evaluates
-annual data availability, constructs a consistent reporter panel,
-identifies major CO2-emitting facilities, and analyses sector-level
-contributions.
+A reproducible Python analysis of facility-level industrial air releases
+reported in Sweden under the European Pollutant Release and Transfer Register
+(E-PRTR). The project covers 2018–2024 and combines trend, concentration,
+sector, data-availability, and spatial analyses.
 
-## Key Findings
+## Questions answered
 
-Among facilities with reported values in every year from 2018 to 2024:
+- How did selected reported air releases change among consistently reporting
+  facility–pollutant pairs?
+- How available are annual values for six climate and air-pollution indicators?
+- Which facilities account for the largest reported non-biogenic CO₂ releases?
+- How concentrated are reported CO₂ releases across facilities and sectors?
+- Where are the major reporting facilities located?
 
-- CO2 excluding biomass decreased by 10.7%.
-- Nitrogen oxides (NOX) decreased by 8.3%.
-- Nitrous oxide (N2O) decreased by 19.9%.
-- Particulate matter (PM10) decreased by 32.7%.
-- Ammonia (NH3) increased by 3.0%.
-- NMVOC increased by 9.6%.
+## Key findings
 
-Additional 2024 findings:
+Among facility–pollutant pairs with a reported value in every year from 2018
+through 2024:
 
-- Swedish facilities reported approximately 14.15 million tonnes of
-  CO2 excluding biomass.
-- The largest facility accounted for 11.4% of reported CO2 releases.
-- The top five facilities accounted for 49.1%.
-- The top ten facilities accounted for 66.6%.
-- Energy, metals, and mineral industries together accounted for 81.5%
-  of reported industrial CO2 releases.
+| Pollutant | Facilities | 2018–2024 change |
+|---|---:|---:|
+| CO₂ excluding biomass | 73 | -10.7% |
+| Nitrogen oxides (NOX) | 50 | -8.3% |
+| Nitrous oxide (N₂O) | 20 | -19.9% |
+| Particulate matter (PM10) | 11 | -32.7% |
+| Ammonia (NH₃) | 33 | +3.0% |
+| NMVOC | 27 | +9.6% |
 
-## Visual Results
+For 2024, Swedish facilities reported approximately **14.15 million tonnes**
+of CO₂ excluding biomass. The largest facility accounted for **11.4%**, the top
+five for **49.1%**, and the top ten for **66.6%**. Energy, metals, and mineral
+industries together accounted for **81.5%** of the reported total.
 
-### Emission trends for consistent reporters
+These are descriptive findings for reported E-PRTR releases, not a complete
+inventory of all Swedish industrial emissions.
+
+## Results
+
+### Consistent-reporter trend
 
 ![Emission trend](outputs/figures/emission_trend_index_2018_2024.png)
 
-### Availability of annual reported values
+### Annual value availability
 
 ![Reported value availability](outputs/figures/reporting_coverage_2018_2024.png)
 
-### Top ten CO2-emitting facilities
+### Largest reported CO₂ sources
 
 ![Top ten facilities](outputs/figures/top10_co2_facilities_2024.png)
 
-### CO2 releases by E-PRTR sector
+### Sector contribution
 
 ![Sector contribution](outputs/figures/co2_sector_contribution_2024.png)
 
-## Interactive Map
-
-The interactive Plotly map supports zooming, industry filtering, and
-facility-level hover information:
+### Interactive map
 
 [Open the interactive facility map](outputs/interactive/sweden_co2_facilities_2024.html)
 
-## Data Source
-
-European Environment Agency:
-
-Industrial Reporting under the Industrial Emissions Directive and the
-European Pollutant Release and Transfer Register.
-
-- Analysis period: 2018-2024
-- Pollutant release unit: kg/year
-- Geographic scope: Sweden
-
-Official dataset:
-
-https://www.eea.europa.eu/en/datahub/datahubitem-view/9405f714-8015-4b5b-a63c-280b82861b3d
-
 ## Methodology
 
-1. Loaded facility-level E-PRTR air release data from Excel.
-2. Filtered records for Sweden.
-3. Reshaped annual columns from wide to long format.
-4. Selected six climate and air-pollution indicators.
-5. Assessed the availability of annual reported values.
-6. Created a panel of facilities with values in all seven years.
-7. Calculated emission indices using 2018 as the baseline.
-8. Ranked facilities reporting CO2 releases in 2024.
-9. Aggregated CO2 releases by E-PRTR sector.
-10. Created static and interactive visualisations.
+1. Load the EEA facility and national air-release worksheets.
+2. Filter facility records to Sweden and reshape 2018–2024 values to long form.
+3. Validate the schema, unique facility–pollutant keys, non-negative releases,
+   and the 2024 CO₂ total against the national worksheet.
+4. Measure annual value availability for six selected pollutants.
+5. Define a consistent panel as facility–pollutant pairs with values in all
+   seven years; index each pollutant's summed releases to 2018 = 100.
+6. Rank 2024 CO₂ sources and calculate top-1, top-5, and top-10 concentration.
+7. Map Annex I activity codes to broad E-PRTR sectors and aggregate releases.
+8. Validate Swedish coordinate bounds and export the interactive map.
+
+All releases are read in kg/year and converted to tonnes or million tonnes only
+for presentation.
+
+## Repository structure
+
+```text
+.
+├── 01_data_exploration.ipynb   # Narrative exploratory workflow
+├── src/analyze.py              # Reproducible command-line pipeline
+├── DATA.md                     # Source, provenance, and interpretation notes
+├── requirements.txt            # Python dependencies
+└── outputs/
+    ├── figures/                # Publication-ready PNG charts
+    ├── interactive/            # Plotly facility map
+    └── tables/                 # Analysis-ready CSV outputs
+```
+
+## Run locally
+
+Python 3.10 or later is recommended.
+
+```bash
+git clone https://github.com/XIXIX-ch/swedish-industrial-emissions-analysis.git
+cd swedish-industrial-emissions-analysis
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+Download the EEA workbook following [DATA.md](DATA.md), then run:
+
+```bash
+python src/analyze.py
+```
+
+Custom paths are supported:
+
+```bash
+python src/analyze.py --input /path/to/air_releases.xlsx --output-dir outputs
+```
 
 ## Limitations
 
-E-PRTR operators report pollutant releases when applicable annual
-thresholds are exceeded. A blank value does not necessarily represent
-missing or non-compliant reporting; it may indicate that the release
-was below the reporting threshold.
+- E-PRTR is threshold-based. Blank cells can represent releases below reporting
+  thresholds and should not automatically be classified as missing reports.
+- The consistent panel reduces changes in sample composition but overrepresents
+  persistent, generally larger reporters.
+- The PM10 trend is based on only 11 facilities and is therefore exploratory.
+- Sector assignment uses the leading digit of each facility's reported main
+  Annex I activity and simplifies a more detailed activity classification.
+- Results may differ when the EEA revises historical records or publishes a new
+  workbook version.
 
-The consistent reporter analysis improves comparability across years,
-but focuses on facilities with reported values in every year. These
-facilities are more likely to be persistent large emitters, so the
-results should not be interpreted as representing every industrial
-facility in Sweden.
+## Data source
 
-The PM10 consistent sample contains only 11 facilities, so its trend
-should be interpreted as exploratory.
-
-## Output Tables
-
-The `outputs/tables` directory contains:
-
-- `annual_emission_trends.csv`
-- `trend_summary_2018_2024.csv`
-- `reported_value_availability.csv`
-- `top10_co2_facilities_2024.csv`
-- `co2_sector_summary_2024.csv`
-
-## Tools
-
-- Python
-- pandas
-- openpyxl
-- Matplotlib
-- Plotly
-- Jupyter Notebook
-
-## How to Run
-
-1. Download the EEA Excel dataset.
-2. Place it in the project directory.
-3. Install the packages listed in `requirements.txt`.
-4. Open and run `01_data_exploration.ipynb`.
-
-Install the dependencies with:
-
-`pip install -r requirements.txt`
+European Environment Agency, *Industrial Reporting under the Industrial
+Emissions Directive and the European Pollutant Release and Transfer Register*.
+See [DATA.md](DATA.md) for the workbook version and reproduction instructions.
 
 ## Author
 

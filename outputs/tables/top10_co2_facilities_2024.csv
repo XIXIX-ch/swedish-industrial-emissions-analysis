@@ -1,11 +1,11 @@
-Rank,facilityName,city,EPRTRAnnexIMainActivity,Emission_tonnes,Longitude,Latitude
-1,SSAB EMEA AB i Luleå,LULEÅ,2(b),1609000.0,22.21426,65.56204
-2,SSAB EMEA AB Oxelösund,OXELÖSUND,2(b),1468452.0,17.12562,58.67695
-3,"Preemraff, Lysekil",LYSEKIL,1(a),1377885.347,11.42308,58.34674
-4,"Heidelberg Materials Cement Sverige AB, Slitefabriken",SLITE,3(c),1251989.7,18.80539,57.71172
-5,Luleå kraftvärmeverk LUKAB,LULEÅ,1(c),1232246.0,22.21368,65.56796
-6,Borealis Krackeranl.,STENUNGSUND,4(a)(i),618090.63,11.82554,58.08325
-7,St1 Refinery AB,GÖTEBORG,1(a),596401.8,11.87983,57.70185
-8,Preem  AB Preemraff Göteborg,GÖTEBORG,1(a),564263.96,11.82119,57.71094
-9,LKAB - Kirunagruvan,KIRUNA,2(a),387098.0,20.19092,67.84939
-10,HÖGDALENVERKET,STOCKHOLM,5(b),312863.999,18.06066,59.25761
+Rank,facilityName,city,EPRTRAnnexIMainActivity,Sector,Emission_tonnes,Longitude,Latitude
+1,SSAB EMEA AB i Luleå,LULEÅ,2(b),Production and processing of metals,1609000.0,22.21426,65.56204
+2,SSAB EMEA AB Oxelösund,OXELÖSUND,2(b),Production and processing of metals,1468452.0,17.12562,58.67695
+3,"Preemraff, Lysekil",LYSEKIL,1(a),Energy,1377885.347,11.42308,58.34674
+4,"Heidelberg Materials Cement Sverige AB, Slitefabriken",SLITE,3(c),Mineral industry,1251989.7,18.80539,57.71172
+5,Luleå kraftvärmeverk LUKAB,LULEÅ,1(c),Energy,1232246.0,22.21368,65.56796
+6,Borealis Krackeranl.,STENUNGSUND,4(a)(i),Chemical industry,618090.63,11.82554,58.08325
+7,St1 Refinery AB,GÖTEBORG,1(a),Energy,596401.8,11.87983,57.70185
+8,Preem  AB Preemraff Göteborg,GÖTEBORG,1(a),Energy,564263.96,11.82119,57.71094
+9,LKAB - Kirunagruvan,KIRUNA,2(a),Production and processing of metals,387098.0,20.19092,67.84939
+10,HÖGDALENVERKET,STOCKHOLM,5(b),Waste and wastewater management,312863.999,18.06066,59.25761

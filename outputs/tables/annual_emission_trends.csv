@@ -1,4 +1,4 @@
-Pollutant,Year,TotalEmission,Index_2018_100,TotalEmission_tonnes
+Pollutant,Year,TotalEmission_kg,Index_2018_100,TotalEmission_tonnes
 Ammonia (NH3),2018,1925900.0,100.0,1925.9
 Ammonia (NH3),2019,2051100.0,106.5,2051.1
 Ammonia (NH3),2020,2154900.0,111.9,2154.9
